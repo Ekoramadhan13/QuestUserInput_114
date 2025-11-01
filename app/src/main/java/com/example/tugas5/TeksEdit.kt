@@ -112,7 +112,7 @@ fun FormDataDiri(modifier: Modifier) {
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                
+
                 Text(
                     text = stringResource(id = R.string.label_status),
                     fontWeight = FontWeight.SemiBold
@@ -131,8 +131,47 @@ fun FormDataDiri(modifier: Modifier) {
                         Text(text = item)
                     }
                 }
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                
+                Text(
+                    text = stringResource(id = R.string.label_alamat),
+                    fontWeight = FontWeight.SemiBold
+                )
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(id = R.string.hint_alamat)) }
+                )
+
+                Spacer(modifier = Modifier.height(20.dp))
+
+
+                Button(
+                    onClick = {
+                        submittedNama = nama
+                        submittedJK = jenisKelamin
+                        submittedStatus = status
+                        submittedAlamat = alamat
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Blue),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.btn_submit),
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             }
         }
+
+
+
     }
 
 }
