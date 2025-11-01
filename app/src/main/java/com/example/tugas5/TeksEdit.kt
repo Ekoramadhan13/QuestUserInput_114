@@ -134,7 +134,7 @@ fun FormDataDiri(modifier: Modifier) {
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                
+
                 Text(
                     text = stringResource(id = R.string.label_alamat),
                     fontWeight = FontWeight.SemiBold
@@ -168,10 +168,28 @@ fun FormDataDiri(modifier: Modifier) {
                     )
                 }
             }
+
+            if (submittedNama.isNotEmpty()) {
+                ElevatedCard(
+                    elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
+                    colors = CardDefaults.cardColors(containerColor = Color.Black),
+                    modifier = Modifier
+                        .width(300.dp)
+                        .height(130.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .padding(horizontal = 10.dp, vertical = 15.dp),
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(text = "Nama : $submittedNama", color = Color.White)
+                        Text(text = "Gender : $submittedJK", color = Color.White)
+                        Text(text = "Status : $submittedStatus", color = Color.White)
+                        Text(text = "Alamat : $submittedAlamat", color = Color.White)
+                    }
+                }
+            }
         }
-
-
-
     }
 
 }
