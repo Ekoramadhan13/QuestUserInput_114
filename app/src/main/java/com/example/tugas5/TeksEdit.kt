@@ -1,146 +1,33 @@
 package com.example.tugas5
 
-
-import android.R.attr.enabled
-import android.service.autofill.OnClickAction
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
-import androidx.compose.material3.Button
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.RadioButton
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Outline
-import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
-fun FormDataDiri(modifier: Modifier
-){
-    var textnama by remember { mutableStateOf(value = "") }
-    var textalamat by remember { mutableStateOf(value = "") }
-    var textJK by remember { mutableStateOf(value = "") }
+fun Pratikum5(modifier: Modifier) {
+    var nama by remember { mutableStateOf("") }
+    var jenisKelamin by remember { mutableStateOf("") }
+    var status by remember { mutableStateOf("") }
+    var alamat by remember { mutableStateOf("") }
 
-    var nama by remember { mutableStateOf(value = "") }
-    var alamat by remember { mutableStateOf(value = "") }
-    var Jenis by remember { mutableStateOf(value = "") }
-
-    val gender:List<String> = listOf("Laki-laki","perempuan")
-
-    Column (modifier = modifier.padding(top = 50.dp),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        OutlinedTextField(
-            value = textnama,
-            singleLine = true,
-            shape = MaterialTheme.shapes.large,
-            modifier = modifier.width(width = 250.dp),
-            label = { Text(text = "Nama Lengkap") },
-            onValueChange = {
-                textnama = it
-            }
-        )
-
-        Row {
-            gender.forEach { item ->
-                Row(
-                    modifier = modifier.selectable(
-                        selected = textJK == item,
-                        onClick = { textJK = item }
-                    ),verticalAlignment = Alignment.CenterVertically) {
-                    RadioButton(
-                        selected = textJK == item,
-                        onClick = {
-                            textJK = item
-                        })
-                    Text(text = item)
-                }
-            }
-        }
-
-        OutlinedTextField(
-            value = textalamat,
-            singleLine = true,
-            modifier = modifier.width(width = 250.dp),
-            label = { Text(text = "Alamat Lengkap") },
-            onValueChange = {
-                textalamat = it
-            }
-        )
-
-        HorizontalDivider(
-            modifier = Modifier.padding(
-                bottom = dimensionResource(id = R.dimen.padding_medium),
-                top = dimensionResource(
-                    id = R.dimen.padding_medium
-                )
-            ),
-            thickness = dimensionResource(id = R.dimen.divider_tipis),
-            color = Color.DarkGray
-        )
-        Button(
-            modifier = Modifier.fillMaxWidth(fraction = 1f),
-            enabled = textalamat.isNotEmpty(),
-            onClick = {
-                nama = textnama
-                Jenis= textJK
-                alamat = textalamat
-            }
-        ){
-            Text(text = stringResource(id = R.string.Submit))
-        }
-        HorizontalDivider(
-            modifier = Modifier
-                .padding(bottom = dimensionResource(id = R.dimen.padding_medium),
-                    top = dimensionResource(
-                        id = R.dimen.padding_medium
-                    )),
-            thickness = dimensionResource(id = R.dimen.divider_tipis),
-            color = Color.DarkGray
-        )
-
-        ElevatedCard (
-            elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
-            colors = CardDefaults.cardColors(containerColor = Color.Black),
-            modifier = Modifier
-                .height(height = 100.dp)
-                .width(width = 300.dp)
-        ){
-            Column (
-                modifier = Modifier
-                    .padding(horizontal = 5.dp, vertical = 15.dp),)
-            {
-                Text(text = "Nama :"+nama, color = Color.White)
-                Text(text = "Gender :"+Jenis, color = Color.White)
-                Text(text = "Alamat :"+alamat, color = Color.White)
-            }
-        }
+    var submittedNama by remember { mutableStateOf("") }
+    var submittedJK by remember { mutableStateOf("") }
+    var submittedStatus by remember { mutableStateOf("") }
+    var submittedAlamat by remember { mutableStateOf("") }
 
 
-    }
 }
-
 
 
 
