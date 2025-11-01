@@ -87,6 +87,29 @@ fun FormDataDiri(modifier: Modifier) {
                     modifier = Modifier.fillMaxWidth(),
                     placeholder = { Text(stringResource(id = R.string.hint_nama)) }
                 )
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                
+                Text(
+                    text = stringResource(id = R.string.label_jenis_kelamin),
+                    fontWeight = FontWeight.SemiBold
+                )
+                genderOptions.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .selectable(
+                                selected = jenisKelamin == item,
+                                onClick = { jenisKelamin = item }
+                            )
+                            .padding(vertical = 4.dp)
+                    ) {
+                        RadioButton(selected = jenisKelamin == item, onClick = { jenisKelamin = item })
+                        Text(text = item)
+                    }
+                }
+
             }
         }
     }
