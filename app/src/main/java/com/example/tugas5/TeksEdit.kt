@@ -77,7 +77,16 @@ fun FormDataDiri(modifier: Modifier) {
                     .padding(16.dp),
                 horizontalAlignment = Alignment.Start
             ) {
-
+                Text(
+                    text = stringResource(id = R.string.label_nama),
+                    fontWeight = FontWeight.SemiBold
+                )
+                OutlinedTextField(
+                    value = nama,
+                    onValueChange = { nama = it },
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text(stringResource(id = R.string.hint_nama)) }
+                )
             }
         }
     }
