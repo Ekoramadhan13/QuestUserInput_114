@@ -61,7 +61,7 @@ fun FormDataDiri(modifier: Modifier) {
         }
 
         Spacer(modifier = Modifier.height(16.dp))
-        
+
         Card(
             modifier = Modifier
                 .fillMaxWidth(0.9f)
@@ -71,6 +71,14 @@ fun FormDataDiri(modifier: Modifier) {
             shape = MaterialTheme.shapes.medium
         ) {
 
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+
+            }
         }
     }
 
