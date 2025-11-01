@@ -31,6 +31,12 @@ fun FormDataDiri(modifier: Modifier) {
         stringResource(id = R.string.opsi_perempuan)
     )
 
+    val statusOptions = listOf(
+        stringResource(id = R.string.opsi_janda),
+        stringResource(id = R.string.opsi_lajang),
+        stringResource(id = R.string.opsi_duda)
+    )
+
 }
 
 
