@@ -49,7 +49,15 @@ fun FormDataDiri(modifier: Modifier) {
                 .height(120.dp)
                 .background(Color.Blue) //
         ) {
-
+            Text(
+                text = stringResource(id = R.string.title_formulir),
+                color = Color.White,
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(start = 24.dp, bottom = 12.dp)
+            )
         }
     }
 
