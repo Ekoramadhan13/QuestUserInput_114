@@ -90,7 +90,7 @@ fun FormDataDiri(modifier: Modifier) {
 
                 Spacer(modifier = Modifier.height(10.dp))
 
-                
+
                 Text(
                     text = stringResource(id = R.string.label_jenis_kelamin),
                     fontWeight = FontWeight.SemiBold
@@ -110,6 +110,27 @@ fun FormDataDiri(modifier: Modifier) {
                     }
                 }
 
+                Spacer(modifier = Modifier.height(10.dp))
+
+                
+                Text(
+                    text = stringResource(id = R.string.label_status),
+                    fontWeight = FontWeight.SemiBold
+                )
+                statusOptions.forEach { item ->
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .selectable(
+                                selected = status == item,
+                                onClick = { status = item }
+                            )
+                            .padding(vertical = 4.dp)
+                    ) {
+                        RadioButton(selected = status == item, onClick = { status = item })
+                        Text(text = item)
+                    }
+                }
             }
         }
     }
