@@ -26,6 +26,10 @@ fun FormDataDiri(modifier: Modifier) {
     var submittedStatus by remember { mutableStateOf("") }
     var submittedAlamat by remember { mutableStateOf("") }
 
+    val genderOptions = listOf(
+        stringResource(id = R.string.opsi_laki),
+        stringResource(id = R.string.opsi_perempuan)
+    )
 
 }
 
