@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Pratikum5(modifier: Modifier) {
+fun FormDataDiri(modifier: Modifier) {
     var nama by remember { mutableStateOf("") }
     var jenisKelamin by remember { mutableStateOf("") }
     var status by remember { mutableStateOf("") }
