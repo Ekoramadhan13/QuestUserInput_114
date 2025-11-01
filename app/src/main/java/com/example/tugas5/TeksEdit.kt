@@ -43,7 +43,14 @@ fun FormDataDiri(modifier: Modifier) {
             .background(Color.White), //
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(120.dp)
+                .background(Color.Blue) //
+        ) {
 
+        }
     }
 
 }
