@@ -59,6 +59,19 @@ fun FormDataDiri(modifier: Modifier) {
                     .padding(start = 24.dp, bottom = 12.dp)
             )
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        
+        Card(
+            modifier = Modifier
+                .fillMaxWidth(0.9f)
+                .padding(8.dp),
+            elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White),
+            shape = MaterialTheme.shapes.medium
+        ) {
+
+        }
     }
 
 }
