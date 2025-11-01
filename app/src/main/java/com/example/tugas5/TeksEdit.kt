@@ -37,6 +37,15 @@ fun FormDataDiri(modifier: Modifier) {
         stringResource(id = R.string.opsi_duda)
     )
 
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White), //
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+    }
+
 }
 
 
